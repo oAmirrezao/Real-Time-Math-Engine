@@ -1,0 +1,69 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Formula Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Dynamic Formula Calculator</h1>
+        
+        <div class="formula-group">
+            <div class="formula-header">
+                <h2>Total Cost</h2>
+                <div class="formula-preview">
+                    <span class="var">fee</span> × <span class="var">count</span> - <span class="var">discount</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="number" class="form-input" id="fee1" placeholder="Fee" step="0.1">
+                <input type="number" class="form-input" id="count1" placeholder="Count">
+                <input type="number" class="form-input" id="discount1" placeholder="Discount" step="0.1">
+            </div>
+            <div class="formula-card" data-formula="count * fee - discount">
+                <div class="formula-display">Result: <span class="output">0</span></div>
+            </div>
+        </div>
+
+        <div class="formula-group">
+            <div class="formula-header">
+                <h2>Discounted Price</h2>
+                <div class="formula-preview">
+                    (<span class="var">fee</span> × <span class="var">count</span>) ÷ (1 + <span class="var">discount</span>/100)
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="number" class="form-input" id="fee2" placeholder="Fee" step="0.1">
+                <input type="number" class="form-input" id="count2" placeholder="Count">
+                <input type="number" class="form-input" id="discount2" placeholder="Discount %" step="0.1">
+            </div>
+            <div class="formula-card" data-formula="(fee * count) / (1 + discount/100)">
+                <div class="formula-display">Result: <span class="output">0</span></div>
+            </div>
+        </div>
+
+        <div class="formula-group">
+            <div class="formula-header">
+                <h2>Special Offer</h2>
+                <div class="formula-preview">
+                    (<span class="var">fee</span> - <span class="var">discount</span>) × <span class="var">count</span> × 0.1
+                </div>
+            </div>
+            <div class="input-group">
+                <input type="number" class="form-input" id="fee3" placeholder="Fee" step="0.1">
+                <input type="number" class="form-input" id="count3" placeholder="Count">
+                <input type="number" class="form-input" id="discount3" placeholder="Discount" step="0.1">
+            </div>
+            <div class="formula-card" data-formula="(fee - discount) * count * 0.1">
+                <div class="formula-display">Result: <span class="output">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

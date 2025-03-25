@@ -1,0 +1,130 @@
+/* styles.css */
+:root {
+  --primary: #4a90e2;
+  --secondary: #f5f6fa;
+  --text: #2d3436;
+  --error: #e74c3c;
+  --formula-bg: #f8f9fa;
+  --formula-text: #495057;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--secondary);
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.formula-group {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.formula-group:hover {
+  transform: translateY(-2px);
+}
+
+.formula-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.formula-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary);
+}
+
+.formula-preview {
+  font-family: 'Fira Code', monospace;
+  background: var(--formula-bg);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: var(--formula-text);
+  font-size: 1.1rem;
+  overflow-x: auto;
+}
+
+.var {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  padding: 0.8rem;
+  border: 2px solid #dfe6e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.formula-card {
+  background: var(--secondary);
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+}
+
+.formula-display {
+  font-size: 1.2rem;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output {
+  font-weight: 600;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.error {
+  color: var(--error);
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+  }
+  
+  .input-group {
+      grid-template-columns: 1fr;
+  }
+  
+  .formula-preview {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+  }
+}
